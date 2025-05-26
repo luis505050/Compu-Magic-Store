@@ -5,9 +5,9 @@ const Productos = () => {
   const { agregarAlCarrito, carrito } = useContext(CarritoContext); // 👈 incluimos 'carrito'
 
   const productosEjemplo = [
-    { id: 1, nombre: "Laptop Gamer", precio: 2500, imagen: "https://via.placeholder.com/150" },
-    { id: 2, nombre: "Teclado Mecánico", precio: 150 , imagen: "https://via.placeholder.com/150" },
-    { id: 3, nombre: "Mouse Inalámbrico", precio: 80, imagen: "https://via.placeholder.com/150" },
+    { id: 1, nombre: "Laptop Gamer", precio: 2500, imagen: "src/assets/imgs/laptopGamer.jpg" },
+    { id: 2, nombre: "Teclado Mecánico", precio: 150 , imagen: "src/assets/imgs/teclado-mecanico.jpg" },
+    { id: 3, nombre: "Mouse Inalámbrico", precio: 80, imagen: "src/assets/imgs/mouseGamer.jpg" },
   ];
 
   return (
