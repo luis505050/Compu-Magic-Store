@@ -1,0 +1,98 @@
+/* Estilos generales */
+.navbar {
+  background-color: #131313;
+  color: #ffffff;
+  padding: 16px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Logo */
+.navbar-logo a {
+  font-size: 1.5rem; 
+  font-weight: bold; 
+  color: transparent; /* Hacemos el texto transparente para mostrar solo el fondo */
+  background: linear-gradient(to right, #7085aa 50%, #bac7dd 50%); /* Degradado para crear el efecto de cambio de color */
+  background-size: 200% 100%; /* Doble ancho para permitir el desplazamiento del fondo */
+  background-position: right bottom; /* Posición inicial del fondo hacia la derecha */  
+  -webkit-background-clip: text; /* Aplica el fondo solo al texto */
+  background-clip: text;
+  -webkit-text-fill-color: transparent; /* Oculta el color del texto base */
+  text-decoration: none; /* Sin subrayado predeterminado */
+  position: relative; /* Necesario para posicionar el subrayado animado */  
+  transition: background-position 0.5s ease; /* Transición suave del fondo */
+}
+
+.navbar-logo a::after {
+  content: ''; /* Se genera un pseudo-elemento para la línea */
+  position: absolute; /* Posición absoluta respecto al enlace */
+  bottom: -4px; /* Distancia debajo del texto */
+  left: 0; /* Inicia desde la izquierda */
+  width: 0%; /* Ancho inicial (no visible) */
+  height: 2px; /* Grosor del subrayado */
+  background-color: rgb(17, 36, 56); /* Color de la línea */
+  transition: width 0.5s ease; /* Transición suave del ancho */
+}
+
+.navbar-logo a:hover {
+  background-position: left bottom; /* Mueve el fondo hacia la izquierda (efecto wipe en texto) */
+}
+
+.navbar-logo a:hover::after {
+  width: 100%; /* Expande el subrayado al 100% en hover */
+}
+
+
+/* Links */
+.navbar-links a {
+  margin-left: 24px;
+  text-decoration: none;
+  color: #86868B;
+  font-weight: 500;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  padding-bottom: 2px;
+  position: relative;
+}
+
+/* Efecto al pasar el mouse */
+.navbar-links a:hover {
+  color: #ffffff;
+}
+
+.navbar-links a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: #1561F0;
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+.navbar-links a:hover::after {
+  width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+  }
+
+  .navbar-links {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .navbar-links a {
+    margin: 8px 0;
+  }
+}

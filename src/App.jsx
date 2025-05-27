@@ -3,17 +3,22 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Productos from './pages/productos';
 import Navbar from './components/Navbar';
+import Footer from './context/footer';
+import './styles/Global.css'
 
 const App = () => {
   return (
-    <>
+    <div className="layout">
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/productos" element={<Productos/>}/>
-      </Routes>
-    </>
+      <main className="main-content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/productos" element={<Productos />} />
+        </Routes>
+      </main>
+      <Footer />
+    </div>
   );
 };
 
