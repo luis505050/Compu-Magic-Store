@@ -4,7 +4,11 @@ import '../styles/navbar.css'
 const Navbar = () => {
   return (
     <nav className='navbar'>
-      <div className="navbar-logo"><Link to="/">Compu Magic store</Link></div>
+      <div className="navabar-logo">
+        <span className="navbar-logo"><Link to="/"> Compu </Link></span>
+        <span className="navbar-logo"><Link to="/"> Magic </Link></span>
+        <span className="navbar-logo"><Link to="/"> Magic </Link></span>
+      </div>
       <div className="navbar-links">
         <Link to="/">Inicio</Link>
         <Link to="/productos">Productos</Link>
