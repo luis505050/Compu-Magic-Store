@@ -5,7 +5,7 @@ import Productos from './pages/productos';
 import Navbar from './components/Navbar';
 import Footer from './context/footer';
 import './styles/Global.css'
-import CarritoFlotante from './context/Carritoflotante';
+import CarritoFlotante from '../context/CarritoFlotante';
 
 const App = () => {
   return (
