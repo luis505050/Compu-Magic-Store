@@ -5,6 +5,7 @@ import Productos from './pages/productos';
 import Navbar from './components/Navbar';
 import Footer from './context/footer';
 import './styles/Global.css'
+import CarritoFlotante from './context/Carritoflotante';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/productos" element={<Productos />} />
         </Routes>
+        <CarritoFlotante/>
       </main>
       <Footer />
     </div>
