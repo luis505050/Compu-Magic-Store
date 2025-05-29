@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { CarritoContext } from "../context/CarritoContext";
+import { CarritoContext } from "./CarritoContext";
 import { ShoppingCart } from "lucide-react";
 import "../styles/CarritoFlotante.css"; // Asegúrate de tener este archivo
 
