@@ -1,0 +1,52 @@
+.carrusel {
+  display: grid;
+  align-items: center; /* Alinea verticalmente la imagen y el texto */
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 12px;
+  border: 1px solid #000;
+}
+
+.carrusel-img {
+    width: 50rem;
+    height: 400px;
+    object-fit: contain;
+    display: block;
+}
+
+.carrusel-mensaje {    
+    width: 50rem;
+    height: 400px;
+    font-size: 1.1rem;
+    color: #1561F0;
+    font-weight: 500;
+    text-align: left;
+}
+h3{
+    margin: 180px;
+}
+.carrusel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 0 15px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.carrusel-btn:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.carrusel-btn:first-of-type {
+    left: 10px;
+}
+
+.carrusel-btn:last-of-type {
+  right: 10px;
+}
