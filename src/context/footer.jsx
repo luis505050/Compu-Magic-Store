@@ -6,14 +6,16 @@ const Footer = () =>{
             <footer className="footer">
                 <div className="footer-content">
                     <div className="footer-logo">
-                        <h2>MiTienda</h2>
-                        <p>Soluciones en tecnología y soporte.</p>
+                        <h2><span>Compu-Magic-Store</span></h2>
+                        <p>Todo lo que necesita para su ordenador <br />
+                        lo encuentra con nosotros, manejamos los<br />
+                         mejores presios del mercado.  </p>
                     </div>
 
                     <div className="footer-links">
                         <h3>Enlaces</h3>
                         <ul>
-                            <li><a href="/inicio">Inicio</a></li>
+                            <li><a href="/">Inicio</a></li>
                             <li><a href="/productos">Productos</a></li>
                             <li><a href="/contacto">Contacto</a></li>
                             <li><a href="/soporte">Soporte</a></li>
@@ -22,8 +24,11 @@ const Footer = () =>{
 
                     <div className="footer-contacto">
                         <h3>Contacto</h3>
-                        <p>Email: contacto@mitienda.com</p>
-                        <p>Tel: +51 987 654 321</p>
+                        <a className="link-item" href="https://www.facebook.com/profile.php?id=61576451712153">Facebook</a>
+                        <p> 📧 Email: Compu_Magic_Store@gmail.com</p>
+                        <p> 📞 Tel: +51 917 361 031</p>
+                    </div>
+                    <div>                        
                     </div>
                 </div>
 
