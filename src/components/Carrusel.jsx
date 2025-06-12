@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../styles/carrusel.css"
+import "../styles/Carrusel.css"
 import img1 from "../assets/imgs/carrusel/casew800h800.webp";
 import img2 from "../assets/imgs/carrusel/CASE-CYBERTEL-COMMADER-CBX5009.jpg";
 import img3 from "../assets/imgs/carrusel/whiteCase.webp";
@@ -30,7 +30,7 @@ const Carrusel = () => {
           <div style={{ display: "flex", alignItems: "center", gap: "20px", width: "100%" }}>
               <img src={imagenes[index]} alt={`img-${index}`} className="carrusel-img" />
               <div className="carrusel-mensaje">
-                  <h3>{mensajes[index]}</h3>
+                  <h3 className="txt">{mensajes[index]}</h3>
               </div>
           </div>
       <button className="carrusel-btn" onClick={siguiente}>›</button>
