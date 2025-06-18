@@ -14,7 +14,54 @@
     height: 400px;
     object-fit: contain;
     display: block;
+}/* Ajuste del tamaño del carrusel */
+.carousel {
+  width: 100%; /* El carrusel ocupa todo el ancho disponible */
+  max-width: 900px; /* Límite máximo del ancho para no ser demasiado grande */
+  margin: 0 auto; /* Centrado del carrusel */
+  border-radius: 10px; /* Bordes redondeados */
+  overflow: cover ; /* Para que las imágenes no sobresalgan */
 }
+
+/* Ajuste de las imágenes */
+.carousel-item img {
+  width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+  height: 400px; /* Altura fija para las imágenes, ajustable según tu diseño */
+  object-fit: contain; /* Asegura que la imagen cubra el espacio sin deformarse */
+  border-radius: 8px; /* Bordes redondeados para las imágenes */
+}
+
+/* Estilos para las flechas de navegación */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #000; /* Color de las flechas */
+  border-radius: 50%; /* Flechas redondeadas */
+  border: 1px solid #000;    
+}
+
+/* Ajustes para los mensajes del carrusel */
+.carousel-caption h3 {
+  font-size: 1.5rem; /* Tamaño de fuente del mensaje */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para que el texto sea más visible */
+  color: #fff; /* Color blanco para el texto */
+  background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+  padding: 10px 20px; /* Espaciado del texto */
+  border-radius: 5px; /* Bordes redondeados del fondo */
+  margin-bottom: 20px; /* Espaciado en la parte inferior */
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 767px) {
+  .carousel-item img {
+    height: 250px; /* Altura más pequeña en pantallas pequeñas */
+  }
+
+  .carousel-caption h3 {
+    font-size: 1.2rem; /* Fuente más pequeña en pantallas pequeñas */
+    padding: 8px 16px; /* Ajuste en el espaciado del texto */
+  }
+}
+
 
 .carrusel-mensaje {    
     width: 50rem;
