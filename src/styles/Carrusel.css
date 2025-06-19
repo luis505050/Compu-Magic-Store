@@ -1,101 +1,102 @@
 .carrusel {
-  display: grid;
-  align-items: center; /* Alinea verticalmente la imagen y el texto */
-  justify-content: center;
   width: 100%;
   margin: 0 auto;
   border-radius: 12px;
-  border: 1px solid #000;
   background-color: #fff;
 }
 
 .carrusel-img {
-    width: 50rem;
-    height: 400px;
-    object-fit: contain;
-    display: block;
-}/* Ajuste del tamaño del carrusel */
+  width: 50rem;
+  height: 400px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Ajuste del tamaño del carrusel */
 .carousel {
-  width: 100%; /* El carrusel ocupa todo el ancho disponible */
-  max-width: 900px; /* Límite máximo del ancho para no ser demasiado grande */
-  margin: 0 auto; /* Centrado del carrusel */
-  border-radius: 10px; /* Bordes redondeados */
-  overflow: cover ; /* Para que las imágenes no sobresalgan */
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 /* Ajuste de las imágenes */
 .carousel-item img {
-  width: 100%; /* La imagen ocupa todo el ancho del contenedor */
-  height: 400px; /* Altura fija para las imágenes, ajustable según tu diseño */
-  object-fit: contain; /* Asegura que la imagen cubra el espacio sin deformarse */
-  border-radius: 8px; /* Bordes redondeados para las imágenes */
+  background-color: #fff;
+  width: 100%;
+  height: 400px;
+  object-fit: contain;
+  border-radius: 8px;
 }
 
-/* Estilos para las flechas de navegación */
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  background-color: #000; /* Color de las flechas */
-  border-radius: 50%; /* Flechas redondeadas */
-  border: 1px solid #000;    
-}
-
-/* Ajustes para los mensajes del carrusel */
-.carousel-caption h3 {
-  font-size: 1.5rem; /* Tamaño de fuente del mensaje */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para que el texto sea más visible */
-  color: #fff; /* Color blanco para el texto */
-  background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
-  padding: 10px 20px; /* Espaciado del texto */
-  border-radius: 5px; /* Bordes redondeados del fondo */
-  margin-bottom: 20px; /* Espaciado en la parte inferior */
-}
-
-/* Ajustes para pantallas pequeñas */
-@media (max-width: 767px) {
-  .carousel-item img {
-    height: 250px; /* Altura más pequeña en pantallas pequeñas */
-  }
-
-  .carousel-caption h3 {
-    font-size: 1.2rem; /* Fuente más pequeña en pantallas pequeñas */
-    padding: 8px 16px; /* Ajuste en el espaciado del texto */
-  }
-}
-
-
-.carrusel-mensaje {    
-    width: 50rem;
-    height: 400px;
-    font-size: 1.1rem;
-    color: #1561F0;
-    font-weight: 500;
-    text-align: left;
-}
-.txt{
-    margin: 180px;
-    font-size: 1.7rem;    
-}
+/* Estilos para los nuevos íconos de navegación con Bootstrap Icons */
 .carrusel-btn {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.4);
-  color: white;
+  top: 0;
   border: none;
   font-size: 2rem;
   padding: 0 15px;
   cursor: pointer;
   z-index: 2;
+  border-radius: 50%;
+  object-fit: contain;
 }
 
-.carrusel-btn:hover {
-  background-color: rgba(0, 0, 0, 0.6);
+/* Íconos dentro de los botones */
+.carrusel-btn i {
+  font-size: 2.5rem;
+  color: #000000;
 }
 
+/* Posicionamiento de los botones */
 .carrusel-btn:first-of-type {
-    left: 10px;
+  left: 10px;
 }
 
 .carrusel-btn:last-of-type {
   right: 10px;
+}
+
+/* Texto del carrusel (h3) */
+.carousel-caption h3 {
+  font-size: clamp(1rem, 2.5vw, 1.8rem);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  color: #fff;
+  background: rgba(68, 67, 67, 0.5);
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 767px) {
+  .carousel-item img {
+    height: 250px;
+  }
+
+  .carousel-caption h3 {
+    font-size: 1rem;
+    padding: 6px 12px;
+    margin-bottom: 150px;
+  }
+
+  .carrusel-btn i {
+    font-size: 2rem;
+  }
+}
+
+/* Otros estilos ya definidos */
+.carrusel-mensaje {
+  width: 50rem;
+  height: 400px;
+  font-size: 1.1rem;
+  color: #1561F0;
+  font-weight: 500;
+  text-align: left;
+}
+
+.txt {
+  margin: 180px;
+  font-size: 1.7rem;
 }

@@ -3,9 +3,8 @@ import "../styles/Carrusel.css";
 import img1 from "../assets/imgs/carrusel/casew800h800.webp";
 import img2 from "../assets/imgs/carrusel/CASE-CYBERTEL-COMMADER-CBX5009.jpg";
 import img3 from "../assets/imgs/carrusel/whiteCase.webp";
-
-// Importa Bootstrap (si no lo has hecho en otro archivo)
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css'; // Importa los íconos
 
 const Carrusel = () => {
   const imagenes = [img1, img2, img3];
@@ -17,13 +16,12 @@ const Carrusel = () => {
 
   const [index, setIndex] = useState(0);
 
-  // Lógica para el siguiente y anterior
   const siguiente = () => {
-    setIndex((prevIndex) => (prevIndex + 1) % imagenes.length); // Vuelve al primer elemento cuando llega al último
+    setIndex((prevIndex) => (prevIndex + 1) % imagenes.length);
   };
 
   const anterior = () => {
-    setIndex((prevIndex) => (prevIndex - 1 + imagenes.length) % imagenes.length); // Vuelve al último elemento cuando está en el primero
+    setIndex((prevIndex) => (prevIndex - 1 + imagenes.length) % imagenes.length);
   };
 
   return (
@@ -32,33 +30,31 @@ const Carrusel = () => {
         {imagenes.map((imagen, idx) => (
           <div className={`carousel-item ${idx === index ? "active" : ""}`} key={idx}>
             <img src={imagen} className="d-block w-100" alt={`img-${idx}`} />
-            <div className="carousel-caption d-none d-md-block">
+            <div className="carousel-caption">
               <h3>{mensajes[idx]}</h3>
             </div>
           </div>
         ))}
       </div>
 
-      {/* Botón para la flecha de anterior */}
+      {/* Flecha izquierda */}
       <button
-        className="carousel-control-prev"
+        className="carousel-control-prev carrusel-btn"
         type="button"
         onClick={anterior}
         aria-label="Previous"
       >
-        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span className="visually-hidden">Previous</span>
+        <i className="bi bi-caret-left-fill carrusel-icon"></i>
       </button>
 
-      {/* Botón para la flecha de siguiente */}
+      {/* Flecha derecha */}
       <button
-        className="carousel-control-next"
+        className="carousel-control-next carrusel-btn"
         type="button"
         onClick={siguiente}
         aria-label="Next"
       >
-        <span className="carousel-control-next-icon" aria-hidden="true"></span>
-        <span className="visually-hidden">Next</span>
+        <i className="bi bi-caret-right-fill carrusel-icon"></i>
       </button>
     </div>
   );
