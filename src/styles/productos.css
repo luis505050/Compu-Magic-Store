@@ -1,0 +1,49 @@
+/* src/assets/css/productos.css */
+
+.productos-container {
+  padding: 1rem;
+}
+
+.catalogo-productos {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.card-producto {
+  border: 1px solid #2B2B2B;
+  border-radius: 8px;
+  padding: 1rem;
+  background-color: #2B2B2B;
+  color: #fff;
+  width: 180px;
+}
+
+.card-producto img {  
+  border-radius: 4px;
+}
+img{
+    width: 100%;
+    height: 50%;
+}
+
+.card-producto h3 {
+  margin: 0.5rem 0 0.3rem 0;
+}
+
+.boton-agregar {
+  background-color: #1561F0;
+  border: none;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.carrito-container {
+  margin-top: 2rem;
+  background-color: #dcd3d1;
+  padding: 1rem;
+  border-radius: 8px;
+}

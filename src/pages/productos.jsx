@@ -1,57 +1,39 @@
+// Productos.jsx
 import { useContext } from "react";
 import { CarritoContext } from "../context/CarritoContext";
+import "../styles/productos.css";
+
+// ✅ Importación directa de imágenes
+import imgLaptop from "../assets/imgs/laptopGamer.jpg";
+import imgTeclado from "../assets/imgs/teclado-mecanico.jpg";
+import imgMouse from "../assets/imgs/mouseGamer.jpg";
 
 const Productos = () => {
-  const { agregarAlCarrito, carrito } = useContext(CarritoContext); // 👈 incluimos 'carrito'
+  const { agregarAlCarrito, carrito } = useContext(CarritoContext);
 
   const productosEjemplo = [
-    { id: 1, nombre: "Laptop Gamer", precio: 2500, imagen: "src/assets/imgs/laptopGamer.jpg" },
-    { id: 2, nombre: "Teclado Mecánico", precio: 150 , imagen: "src/assets/imgs/teclado-mecanico.jpg" },
-    { id: 3, nombre: "Mouse Inalámbrico", precio: 80, imagen: "src/assets/imgs/mouseGamer.jpg" },
+    { id: 1, nombre: "Laptop Gamer", precio: 2500, imagen: imgLaptop },
+    { id: 2, nombre: "Teclado Mecánico", precio: 150, imagen: imgTeclado },
+    { id: 3, nombre: "Mouse Inalámbrico", precio: 80, imagen: imgMouse },
   ];
 
   return (
-    <div style={{ padding: "1rem" }}>
+    <div className="productos-container">
       <h2>Catálogo de Productos</h2>
-      <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+      <div className="catalogo-productos">
         {productosEjemplo.map((producto) => (
-          <div
-            key={producto.id}
-            style={{
-              border: "1px solid #2B2B2B",
-              borderRadius: "8px",
-              padding: "1rem",
-              backgroundColor: "#2B2B2B",
-              color: "#fff",
-              width: "180px",
-            }}
-          >
-            <img
-              src={producto.imagen}
-              alt={producto.nombre}
-              style={{ width: "100%", borderRadius: "4px" }}
-            />
+          <div key={producto.id} className="card-producto">
+            <img src={producto.imagen} alt={producto.nombre} />
             <h3>{producto.nombre}</h3>
             <p>Precio: ${producto.precio} soles</p>
-            <button
-              style={{
-                backgroundColor: "#1561F0",
-                border: "none",
-                color: "white",
-                padding: "0.5rem",
-                borderRadius: "4px",
-                cursor: "pointer",
-              }}
-              onClick={() => agregarAlCarrito(producto)}
-            >
+            <button className="boton-agregar" onClick={() => agregarAlCarrito(producto)}>
               Agregar al carrito
             </button>
           </div>
         ))}
       </div>
 
-      {/* 👇 Carrito visual */}
-      <div style={{ marginTop: "2rem", backgroundColor: "#dcd3d1", padding: "1rem", borderRadius: "8px" }}>
+      <div className="carrito-container">
         <h2>🛒 Carrito</h2>
         {carrito.length === 0 ? (
           <p>Tu carrito está vacío.</p>
