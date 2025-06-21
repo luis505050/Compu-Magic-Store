@@ -1,6 +1,5 @@
 /* Asegura que el HTML y body ocupen el 100% del alto */
 html, body {
-  background-color: #F2F2F2;
   height: 100%;
   margin: 0;
   padding: 0;
@@ -17,4 +16,5 @@ html, body {
 .main-content {
   flex: 1;
   padding: 20px;
+  background-color: #ebe9e9;
 }
