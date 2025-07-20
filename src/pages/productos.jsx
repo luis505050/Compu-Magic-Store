@@ -1,20 +1,18 @@
-// Productos.jsx
 import { useContext } from "react";
 import { CarritoContext } from "../context/CarritoContext";
 import "../styles/productos.css";
 
-// ✅ Importación directa de imágenes
-import imgLaptop from "../assets/imgs/laptopGamer.jpg";
-import imgTeclado from "../assets/imgs/teclado-mecanico.jpg";
-import imgMouse from "../assets/imgs/mouseGamer.jpg";
+import imgFuenteTeros from "../assets/imgs/fuente_teros_80plus_bronce.jpg";
+import imgSSD from "../assets/imgs/kingston_480gb.jpg";
+import imgRAM from "../assets/imgs/me_ram-ddr4_RGB.jpg";
 
 const Productos = () => {
-  const { agregarAlCarrito, carrito } = useContext(CarritoContext);
+  const { agregarAlCarrito, carrito, eliminarDelCarrito } = useContext(CarritoContext);
 
   const productosEjemplo = [
-    { id: 1, nombre: "Laptop Gamer", precio: 2500, imagen: imgLaptop },
-    { id: 2, nombre: "Teclado Mecánico", precio: 150, imagen: imgTeclado },
-    { id: 3, nombre: "Mouse Inalámbrico", precio: 80, imagen: imgMouse },
+    { id: 1, nombre: "Fuente Teros 600w", precio: 170 , imagen: imgFuenteTeros },
+    { id: 2, nombre: "Disco Solido A400", precio: 150, imagen: imgSSD },
+    { id: 3, nombre: "Memoria RAM DDR4 RGB", precio: 160, imagen: imgRAM },
   ];
 
   return (
@@ -42,6 +40,12 @@ const Productos = () => {
             {carrito.map((item) => (
               <li key={item.id}>
                 {item.nombre} x {item.cantidad} — Total: ${item.precio * item.cantidad}
+                <button
+                  className="boton-eliminar"
+                  onClick={() => eliminarDelCarrito(item.id)}
+                >
+                  ❌
+                </button>
               </li>
             ))}
           </ul>
