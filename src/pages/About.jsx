@@ -3,16 +3,35 @@ import "../styles/about.css";
 const About = () => {
   return (
     <>
-      <h1>Acerca de nosotros</h1>
+      <h1>Contactenos</h1>
       <div className="formulario">
-        <form action="" className="form-contac">
-          <h3>Contactenos</h3>
-          <p><i class="bi bi-chat-left-dots icon"></i></p>
-          <h4>+51 917 361 031 <title>Número de contacto</title></h4>
+        <form action="https://submit-form.com/pNn6vRmwJ" className="form-contac">
+
+          <div className="input-group">
+            <input type="text" id="name" name="name" placeholder=" " required />
+            <label htmlFor="name">Nombre</label>
+          </div>
+
+          <div className="input-group">
+            <input type="email" id="email" name="email" placeholder=" " required />
+            <label htmlFor="email">Correo</label>
+          </div>
+
+          <div className="input-group">
+            <textarea id="message" name="message" placeholder=" " required></textarea>
+            <label htmlFor="message">Mensaje</label>
+          </div>
+
+          <button className="Enviar" type="submit">Enviar</button>
+          <input 
+            type="hidden"
+            name="_redirect"
+            value="https://compu-magic-store.netlify.app/about" />
+
         </form>
       </div>
     </>
-  )
+  );
 };
 
 export default About;
