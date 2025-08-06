@@ -1,4 +1,4 @@
-/* Estilos generales */
+/* --- Estilos base (conservados) --- */
 .navbar {
   background-color: #131313;
   color: #ffffff;
@@ -8,58 +8,63 @@
   align-items: center;
   font-family: 'Segoe UI', sans-serif;
   box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 10;
 }
 
-/* Logo */
+.navbar-logo-container {
+  display: flex;
+  gap: 8px;
+}
+
 .navbar-logo a {
-  font-size: 1.5rem; 
-  font-weight: bold; 
-  color: transparent; /* Hacemos el texto transparente para mostrar solo el fondo */
-  background: linear-gradient(to right, #7085aa 50%, #bac7dd 50%); /* Degradado para crear el efecto de cambio de color */
-  background-size: 200% 100%; /* Doble ancho para permitir el desplazamiento del fondo */
-  background-position: right bottom; /* Posición inicial del fondo hacia la derecha */  
-  -webkit-background-clip: text; /* Aplica el fondo solo al texto */
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: transparent;
+  background: linear-gradient(to right, #7085aa 50%, #bac7dd 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  -webkit-background-clip: text;
   background-clip: text;
-  -webkit-text-fill-color: transparent; /* Oculta el color del texto base */
-  text-decoration: none; /* Sin subrayado predeterminado */
-  position: relative; /* Necesario para posicionar el subrayado animado */  
-  transition: background-position 0.5s ease; /* Transición suave del fondo */
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+  position: relative;
+  transition: background-position 0.5s ease;
 }
 
 .navbar-logo a::after {
-  content: ''; /* Se genera un pseudo-elemento para la línea */
-  position: absolute; /* Posición absoluta respecto al enlace */
-  bottom: -4px; /* Distancia debajo del texto */
-  left: 0; /* Inicia desde la izquierda */
-  width: 0%; /* Ancho inicial (no visible) */
-  height: 2px; /* Grosor del subrayado */
-  background-color: rgb(17, 36, 56); /* Color de la línea */
-  transition: width 0.5s ease; /* Transición suave del ancho */
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: rgb(17, 36, 56);
+  transition: width 0.5s ease;
 }
 
 .navbar-logo a:hover {
-  background-position: left bottom; /* Mueve el fondo hacia la izquierda (efecto wipe en texto) */
+  background-position: left bottom;
 }
 
 .navbar-logo a:hover::after {
-  width: 100%; /* Expande el subrayado al 100% en hover */
+  width: 100%;
 }
 
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+}
 
-/* Links */
 .navbar-links a {
-  margin-left: 24px;
   text-decoration: none;
   color: #86868B;
   font-weight: 500;
-  transition: color 0.3s ease, border-bottom 0.3s ease;
-  padding-bottom: 2px;
   position: relative;
-}
-
-/* Efecto al pasar el mouse */
-.navbar-links a:hover {
-  color: #ffffff;
+  padding-bottom: 2px;
+  transition: color 0.3s ease;
 }
 
 .navbar-links a::after {
@@ -73,23 +78,68 @@
   transition: width 0.3s ease;
 }
 
+.navbar-links a:hover {
+  color: #ffffff;
+}
+
 .navbar-links a:hover::after {
   width: 100%;
 }
 
-/* Responsive */
+/* --- Hamburguesa --- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  width: 24px;
+  height: 20px;
+  justify-content: space-between;
+  z-index: 20;
+}
+
+.hamburger span {
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Animación hamburguesa activa */
+.hamburger.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* --- Responsive --- */
 @media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
   .navbar {
-    flex-direction: column;
+    flex-wrap: wrap;
     align-items: flex-start;
-    padding: 16px;
   }
 
   .navbar-links {
-    margin-top: 12px;
-    display: flex;
     flex-direction: column;
     width: 100%;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .navbar-links.open {
+    max-height: 300px;
+    opacity: 1;
+    pointer-events: auto;
+    margin-top: 16px;
   }
 
   .navbar-links a {
